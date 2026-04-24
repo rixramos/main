@@ -214,7 +214,7 @@ function launch() {
 function copyEmail(){navigator.clipboard.writeText('johnrick.ramos999@gmail.com').then(()=>{const b=document.getElementById('emailBtn');b.classList.add('copied');setTimeout(()=>b.classList.remove('copied'),2000);});}
 function downloadCV(e){
   if(e)e.preventDefault();
-  window.open('John Rick Ramos Resume.pdf', '_blank');
+  window.open('./docs/John Rick Ramos Resume.pdf', '_blank');
 }
 window.copyAbEmail=function(e){
   e.preventDefault();
