@@ -242,44 +242,9 @@ function buildProjectCards(){
   PROJECTS.forEach((p,i)=>{
     const card=document.createElement('div'); card.className='proj-h-card';
     const tags=p.stack.map(t=>{const url=TECH_LINKS[t];return url?`<a class="pd-stack-tag" href="${url}" target="_blank" rel="noopener">${t}</a>`:`<span class="pd-stack-tag">${t}</span>`;}).join('');
-	const demoBtn = document.getElementById('pd-demo');
-	const githubBtn = document.getElementById('pd-github');
     const demoDisabled = !p.demo || p.demo === '#';
 	const githubDisabled = !p.github || p.github === '#';
-	if (demoDisabled) {
-  demoBtn.href = '#';
-  demoBtn.onclick = () => false;
-  demoBtn.classList.add('disabled');
-  demoBtn.innerHTML = `
-    <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-    Coming Soon
-  `;
-} else {
-  demoBtn.href = p.demo;
-  demoBtn.onclick = null;
-  demoBtn.classList.remove('disabled');
-  demoBtn.innerHTML = `
-    <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-    Live Demo
-  `;
-}
-if (githubDisabled) {
-  githubBtn.href = '#';
-  githubBtn.onclick = () => false;
-  githubBtn.classList.add('disabled');
-  githubBtn.innerHTML = `
-    <svg viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6 2 12"/></svg>
-    Private
-  `;
-} else {
-  githubBtn.href = p.github;
-  githubBtn.onclick = null;
-  githubBtn.classList.remove('disabled');
-  githubBtn.innerHTML = `
-    <svg viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12"/></svg>
-    GitHub
-  `;
-}
+
     card.innerHTML=`
       <div class="proj-h-num">${String(i+1).padStart(2,'0')}</div>
       <div class="proj-h-top">
@@ -541,11 +506,40 @@ function openDetail(i){
   document.getElementById('pd-name').innerHTML=p.nameStyle||(()=>{const w=p.name.split(' ');return w.length>1?w[0]+' <span style="color:var(--blue)">'+w.slice(1).join(' ')+'</span>':p.name;})();
   document.getElementById('pd-desc').textContent=p.desc;
   document.getElementById('pd-stack').innerHTML=p.stack.map(t=>{const url=TECH_LINKS[t];return url?`<a class="pd-stack-tag" href="${url}" target="_blank" rel="noopener">${t}</a>`:`<span class="pd-stack-tag">${t}</span>`;}).join('');
-  document.getElementById('pd-demo').href=p.demo;
-  document.getElementById('pd-github').href=p.github;
-  const imgEl=document.getElementById('pd-screenshot-img'),ph=document.getElementById('pd-shot-placeholder');
-  if(p.screenshot){imgEl.style.display='block';imgEl.classList.remove('loaded');imgEl.src=p.screenshot;imgEl.onload=()=>imgEl.classList.add('loaded');ph.style.display='none';imgEl.style.cursor='zoom-in';imgEl.onclick=()=>window.openScreenshot&&window.openScreenshot(p.screenshot);}
-  else{imgEl.style.display='none';imgEl.src='';ph.style.display='flex';imgEl.onclick=null;}
+  const demoBtn = document.getElementById('pd-demo');
+
+if (p.demo && p.demo !== '#') {
+    demoBtn.href = p.demo;
+    demoBtn.onclick = null;
+    demoBtn.classList.remove('disabled');
+
+    demoBtn.innerHTML = `
+      <svg viewBox="0 0 24 24">
+        <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/>
+        <polyline points="15 3 21 3 21 9"/>
+        <line x1="10" y1="14" x2="21" y2="3"/>
+      </svg>
+      Live Demo
+    `;
+} else {
+    demoBtn.href = '#';
+    demoBtn.onclick = () => false;
+    demoBtn.classList.add('disabled');
+
+    demoBtn.innerHTML = `<svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Coming Soon`;
+}
+
+  const githubBtn = document.getElementById('pd-github');
+
+if (p.github && p.github !== '#') {
+    githubBtn.href = p.github;
+    githubBtn.onclick = null;
+    githubBtn.classList.remove('disabled');
+} else {
+    githubBtn.href = '#';
+    githubBtn.onclick = () => false;
+    githubBtn.classList.add('disabled');
+}
   document.getElementById('proj-grid-view').style.display='none';
   const dv=document.getElementById('proj-detail-view');
   dv.style.display='flex'; dv.classList.remove('animating'); void dv.offsetWidth; dv.classList.add('animating');
