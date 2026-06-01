@@ -545,7 +545,7 @@ nav { position: fixed; top: 2px; left: 0; right: 0; z-index: 200; height: var(--
 .proj-card::before { content: ''; position: absolute; top: -2px; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, var(--blue), rgba(0,255,65,0.15)); transform: scaleX(0); transform-origin: left; transition: transform .4s cubic-bezier(.16,1,.3,1); z-index: 10; }
 .proj-card:hover { border-color: rgba(0,255,65,0.4); transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,255,65,0.08); }
 .proj-card:hover::before { transform: scaleX(1); }
-.pc-img { width: 100%; height: 250px; background: linear-gradient(135deg,rgba(0,255,65,0.06) 0%,rgba(0,255,65,0.02) 100%); display: flex; align-items: center; justify-content: center; position: center; overflow: hidden; flex-shrink: 0; }
+.pc-img { width: 100%; height: 250px; background: linear-gradient(135deg,rgba(0,255,65,0.06) 0%,rgba(0,255,65,0.02) 100%); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; flex-shrink: 0; }
 .pc-img-inner { display: flex; flex-direction: column; align-items: center; gap: .25rem; opacity: .15; transition: opacity .3s; }
 .proj-card:hover .pc-img-inner { opacity: .28; }
 .pc-img-inner svg { width: 28px; height: 28px; stroke: var(--blue); fill: none; stroke-width: 1.2; }
@@ -557,8 +557,10 @@ nav { position: fixed; top: 2px; left: 0; right: 0; z-index: 200; height: var(--
 .pc-tag { font-size: .47rem; padding: .09rem .3rem; border: 1px solid rgba(0,255,65,0.22); color: rgba(0,255,65,0.65); letter-spacing: .08em; text-transform: uppercase; cursor: none; transition: all .25s; }
 .pc-tag:hover { border-color: var(--blue); color: #fff; background: rgba(0,255,65,0.15); }
 .proj-card:hover .pc-tag { border-color: rgba(0,255,65,0.45); color: var(--blue); }
-.pc-thumb-img.loaded { opacity: 1 !important; }
+.pc-thumb-img { width: 100%;height: 100%; object-fit: contain; object-position: center center; opacity: 0;transition: opacity .4s, transform .5s ease; }
+.pc-thumb-img.loaded { opacity: 1 !important; object-fit: contain; }
 .proj-card:hover .pc-thumb-img.loaded { transform: scale(1.06); transition: opacity .4s, transform .5s ease; }
+
 
 /* detail */
 #proj-detail-view { display: none; flex-direction: column; width: 100%; height: 100%; overflow: hidden; }

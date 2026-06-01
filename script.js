@@ -134,8 +134,8 @@ const TECH_LINKS={
 };
 
 const PROJECTS=[
-  {name:'Simple Portfolio',category:'Front-End',desc:'This portfolio — A responsive personal portfolio built to highlight my skills, projects, and professional background. Features include animated sections, project showcases, downloadable CV support, social media integration, and a modern cyber-inspired user interface focused on performance and user experience.',stack:['Next.js','TypeScript','Tailwind CSS','JavaScript','HTML5','CSS3'],demo:'https://rixramos.github.io/CMDPortfolio/',github:'https://github.com/rixramos/CMDPortfolio',screenshot:'images/projportfolio.png'},
-  {name:'Private Project',category:'Front-End',desc:'In Development',stack:['HTML','CSS','JavaScript'],demo:'#',github:'#',screenshot:''},
+  {name:'Simple Portfolio',category:'Front-End',desc:'This portfolio — A responsive personal portfolio built to highlight my skills, projects, and professional background. Features include animated sections, project showcases, downloadable CV support, social media integration, and a modern cyber-inspired user interface focused on performance and user experience.',stack:['Next.js','TypeScript','JavaScript'],demo:'https://rixramos.github.io/CMDPortfolio/',github:'https://github.com/rixramos/CMDPortfolio',screenshot:'images/projportfolio.png'},
+  {name:'Private Project',category:'Front-End',desc:'In Development',stack:['HTML','CSS','JavaScript'],demo:'#',github:'',screenshot:''},
   {name:'Private Project',category:'Front-End',desc:'In Development',stack:['HTML','CSS','JavaScript'],demo:'#',github:'',screenshot:''},
   {name:'Private Project',category:'Front-End',desc:'In Development',stack:['HTML','CSS','JavaScript'],demo:'#',github:'',screenshot:''},
   {name:'Private Project',category:'Front-End',desc:'In Development',stack:['HTML','CSS','JavaScript'],demo:'#',github:'',screenshot:''},
