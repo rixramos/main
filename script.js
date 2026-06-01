@@ -130,15 +130,15 @@ function initVideoLoader() {
 // DATA
 // ═══════════════════════════════════════════════════════════════════
 const TECH_LINKS={
-  'Next.js':'https://nextjs.org','SQL Server':'https://www.microsoft.com/sql-server','React':'https://react.dev',' CSS':'https://developer.mozilla.org/en-US/docs/Web/CSS','Framer Motion':'https://www.framer.com/motion/','Lucide React':'https://lucide.dev/','TBD':null
+  'Next.js':'https://nextjs.org','SQL Server':'https://www.microsoft.com/sql-server','React':'https://react.dev','CSS':'https://developer.mozilla.org/en-US/docs/Web/CSS','Framer Motion':'https://www.framer.com/motion/','Lucide React':'https://lucide.dev/','TBD':null
 };
 
 const PROJECTS=[
-  {name:'Portfolio',category:'Front-End',desc:'This portfolio — A responsive personal portfolio built to highlight my skills, projects, and professional background. Features include animated sections, project showcases, downloadable CV support, social media integration, and a modern cyber-inspired user interface focused on performance and user experience.',stack:['Next.js','TypeScript','Tailwind CSS','JavaScript','HTML5','CSS3'],demo:'https://rixramos.github.io/CMDPortfolio/',github:'https://github.com/rixramos/CMDPortfolio',screenshot:'images/projportfolio.png'},
-  {name:'Private Project',category:'Front-End',desc:'In Development',stack:['HTML','CSS','JavaScript'],demo:'#',github:'#',screenshot:'images/proj1.png'},
-  {name:'Private Project',category:'Front-End',desc:'In Development',stack:['HTML','CSS','JavaScript'],demo:'#',github:'',screenshot:'images/proj2.png'},
-  {name:'Private Project',category:'Front-End',desc:'In Development',stack:['HTML','CSS','JavaScript'],demo:'#',github:'',screenshot:'images/proj3.png'},
-  {name:'Private Project',category:'Front-End',desc:'In Development',stack:['HTML','CSS','JavaScript'],demo:'#',github:'',screenshot:'images/proj4.png'},
+  {name:'Simple Portfolio',category:'Front-End',desc:'This portfolio — A responsive personal portfolio built to highlight my skills, projects, and professional background. Features include animated sections, project showcases, downloadable CV support, social media integration, and a modern cyber-inspired user interface focused on performance and user experience.',stack:['Next.js','TypeScript','Tailwind CSS','JavaScript','HTML5','CSS3'],demo:'https://rixramos.github.io/CMDPortfolio/',github:'https://github.com/rixramos/CMDPortfolio',screenshot:'images/projportfolio.png'},
+  {name:'Private Project',category:'Front-End',desc:'In Development',stack:['HTML','CSS','JavaScript'],demo:'#',github:'#',screenshot:''},
+  {name:'Private Project',category:'Front-End',desc:'In Development',stack:['HTML','CSS','JavaScript'],demo:'#',github:'',screenshot:''},
+  {name:'Private Project',category:'Front-End',desc:'In Development',stack:['HTML','CSS','JavaScript'],demo:'#',github:'',screenshot:''},
+  {name:'Private Project',category:'Front-End',desc:'In Development',stack:['HTML','CSS','JavaScript'],demo:'#',github:'',screenshot:''},
   
 ];
 
@@ -260,13 +260,15 @@ function buildProjectCards(){
       </div>
       <div class="proj-h-actions">
         <a class="proj-h-btn proj-h-btn-primary" href="${p.demo}" ${!demoDisabled?'target="_blank" rel="noopener"':''} ${demoDisabled?'onclick="return false;" style="opacity:.4;pointer-events:none;"':''}>
-          <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Live Demo
+          <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+${demoDisabled ? 'Coming Soon' : 'Live Demo'}
         </a>
         <a class="proj-h-btn proj-h-btn-outline"
    href="${p.github}"
    ${!githubDisabled ? 'target="_blank" rel="noopener"' : ''}
    ${githubDisabled ? 'onclick="return false;" style="opacity:.4;pointer-events:none;"' : ''}>
-          <svg viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.483 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.341-3.369-1.341-.454-1.155-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836a9.59 9.59 0 012.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.579.688.481C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>GitHub
+          <svg viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.483 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.341-3.369-1.341-.454-1.155-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836a9.59 9.59 0 012.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.579.688.481C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+		  ${githubDisabled ? 'Private' : 'GitHub'}
         </a>
       </div>
     `;
@@ -540,6 +542,44 @@ if (p.github && p.github !== '#') {
     githubBtn.onclick = () => false;
     githubBtn.classList.add('disabled');
 }
+const imgEl = document.getElementById('pd-screenshot-img');
+const ph = document.getElementById('pd-shot-placeholder');
+
+if (imgEl) {
+
+    if (p.screenshot) {
+
+        imgEl.style.display = 'block';
+        imgEl.classList.remove('loaded');
+
+        imgEl.onload = () => {
+            imgEl.classList.add('loaded');
+            if (ph) ph.style.display = 'none';
+        };
+
+        imgEl.onerror = () => {
+            console.error('Failed to load:', p.screenshot);
+            if (ph) ph.style.display = 'flex';
+        };
+
+        imgEl.src = p.screenshot;
+
+        // Handle cached images
+        if (imgEl.complete) {
+            imgEl.classList.add('loaded');
+            if (ph) ph.style.display = 'none';
+        }
+
+    } else {
+
+        imgEl.src = '';
+        imgEl.style.display = 'none';
+
+        if (ph) ph.style.display = 'flex';
+    }
+
+
+}
   document.getElementById('proj-grid-view').style.display='none';
   const dv=document.getElementById('proj-detail-view');
   dv.style.display='flex'; dv.classList.remove('animating'); void dv.offsetWidth; dv.classList.add('animating');
@@ -746,4 +786,4 @@ function initCareerDotTrail() {
 // ═══════════════════════════════════════════════════════════════════
 initVideoLoader();
 
-document.addEventListener('DOMContentLoaded', renderTechStack);
+// document.addEventListener('DOMContentLoaded', renderTechStack);
