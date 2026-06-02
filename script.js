@@ -158,11 +158,12 @@ if(!isTouchDevice){
 }
 function bindHover(){
   if(isTouchDevice) return;
-  document.querySelectorAll('a,button,.nav-email,.hr-skill,.proj-card,.pd-btn,.icon-back-btn,.pd-back,.social-item,.cv-side,.pd-stack-tag,.ab-contact-email,.ab-contact-social,.proj-h-screenshot,.proj-see-all-btn,.proj-h-btn').forEach(el=>{
+  document.querySelectorAll('a,button,.nav-email,.hr-skill,.proj-card,.pd-btn,.icon-back-btn,.pd-back,.social-item,.cv-side,.pd-stack-tag,.ab-contact-email,.ab-contact-social,.proj-h-screenshot,.proj-see-all-btn,.proj-h-btn,.ab-strength-desc').forEach(el=>{
     el.addEventListener('mouseenter',()=>curEl.classList.add('hover'));
     el.addEventListener('mouseleave',()=>curEl.classList.remove('hover'));
   });
 }
+
 
 // ═══════════════════════════════════════════════════════════════════
 // LOGO
